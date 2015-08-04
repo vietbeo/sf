@@ -64,6 +64,12 @@ class UserTest < ActiveSupport::TestCase
     password: "foobar", password_confirmation: "foobar"
     assert @u1.valid?
   end
+  
+  test "email and password should presence" do
+    @u1 = User.new user_name:"", email: ""
+    @u1.save
+    assert_not @u1.valid?
+  end
 
   #============== Test Password =====================
   test "password should be present (non-blank)" do

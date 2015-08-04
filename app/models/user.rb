@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
   # Validate Password
   validates :password, length: { minimum: 6 }
 
-
   has_secure_password
 
 end
